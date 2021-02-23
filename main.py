@@ -5,7 +5,9 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/sum/<string:n>')
+n = "sarzrzrarar"
+
+@app.route('/sum/<string:',n,'>')
 def sum(n):
     result = {
         "Number":n
