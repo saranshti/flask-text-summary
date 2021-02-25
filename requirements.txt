@@ -1,4 +1,5 @@
 flask
 transformers
+bs4
 tensorflow==2.4.1
 gunicorn
