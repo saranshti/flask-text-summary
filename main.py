@@ -7,11 +7,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    summarizer = pipeline("summarization", model="t5-base", tokenizer="t5-base", framework="tf")
     return 'Hello, World!'
 
 @app.route('/sum/<string:n>')
 def sum(n):
-    summarizer = pipeline("summarization", model="t5-base", tokenizer="t5-base", framework="tf")
     result = {
         "Number":n,
         "Name":"Saransh"
