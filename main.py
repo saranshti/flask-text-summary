@@ -14,8 +14,7 @@ def hello_world():
 def sum(n):
     result = {
         "Number":n,
-        "Name":"Saransh"
-        
+        "Name":n
     }
     return jsonify(result)
 
