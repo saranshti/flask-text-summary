@@ -1,13 +1,12 @@
 from flask import Flask, jsonify
-from transformers import pipeline
-from bs4 import BeautifulSoup
+import spacy
 import requests
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    summarizer = pipeline("summarization", model="t5-base", tokenizer="t5-base", framework="tf")
+    nlp = spacy.load('en_core_web_sm')
     return 'Hello, World!'
 
 @app.route('/sum/<string:n>')
