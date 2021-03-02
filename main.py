@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 from heapq import nlargest
+import pyrebase
 app = Flask(__name__)
 
 def first2(s):
@@ -12,6 +13,19 @@ def last(s):
 
 @app.route('/')
 def hello_world():
+    config = {
+        "apiKey": "AIzaSyA7XXqb2iYWefv9hkw6kx1RTwLrj2Ryhw8",
+        "authDomain": "flask-text-summary.firebaseapp.com",
+        "databaseURL": "https://flask-text-summary-default-rtdb.firebaseio.com",
+        "projectId": "flask-text-summary",
+        "storageBucket": "flask-text-summary.appspot.com",
+        "messagingSenderId": "932532063095",
+        "appId": "1:932532063095:web:a6785822f1a095b86d2f72",
+        "measurementId": "G-1PF1XEQE6B"
+    }
+    firebase = pyrebase.initialize_app(config)
+    db = firebase.database()
+    db.child("names").push({"name":"saransh"})
     return 'Hello, World!'
 
 @app.route('/sum/<string:n>')
