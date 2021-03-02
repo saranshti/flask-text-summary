@@ -26,6 +26,7 @@ def hello_world():
     firebase = pyrebase.initialize_app(config)
     db = firebase.database()
     db.child("names").push({"name":"saransh"})
+    db.child("names").update({"name":"tiwari"})
     return 'Hello, World!'
 
 @app.route('/sum/<string:n>')
