@@ -25,8 +25,8 @@ def sum(id):
     firebase = pyrebase.initialize_app(config)
     db = firebase.database()
     use = id
-    OT = db.child("User").child(use).child("Original Text").get()
-    R = db.child("User").child(use).child("Ratio").get()
+    OT = db.child("User").child(use).child("original_Text").get()
+    R = db.child("User").child(use).child("ratio").get()
     text = OT.val()
     ratio = R.val()
     num = ratio/100
