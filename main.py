@@ -60,8 +60,8 @@ def sum(id):
     final_summary = [word.text for word in summary]
     summary =''.join(final_summary)
     result = {
-        "Number": ratio,
-        "Name": summary 
+        "Ratio": ratio,
+        "Summary": summary 
     }
     return jsonify(result)
 
